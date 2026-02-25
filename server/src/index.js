@@ -1,4 +1,7 @@
 require('dotenv').config();
+// Fallback values for zero-config local development
+process.env.JWT_SECRET = process.env.JWT_SECRET || 'iwa-dev-secret-change-in-production';
+process.env.CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');

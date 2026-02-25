@@ -36,8 +36,11 @@ const Sidebar = ({ activeConversation, onSelectConversation }: Props) => {
 
   const handleCreated = (conv: Conversation) => {
     setShowNewModal(false);
-    loadConversations();
-    onSelectConversation(conv);
+    api.get('/conversations').then(({ data }) => {
+      setConversations(data);
+      const full = data.find((c: Conversation) => c.id === conv.id) || conv;
+      onSelectConversation(full);
+    });
   };
 
   const filtered = conversations.filter(c => {
