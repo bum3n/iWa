@@ -1,0 +1,21 @@
+{
+  "name": "iwa",
+  "version": "1.0.0",
+  "description": "iWa - Modern Messenger Prototype",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"npm run dev --workspace=server\" \"npm run dev --workspace=client\"",
+    "build": "npm run build --workspace=client",
+    "postinstall": "echo 'iWa installed! Run npm run dev to start.'"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0"
+  }
+}
