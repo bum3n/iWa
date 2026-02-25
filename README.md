@@ -1,2 +1,2 @@
 # iWa
-prototype of new messenger
+Prototype of new messenger
